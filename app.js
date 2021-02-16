@@ -24,9 +24,9 @@ getID('submit').addEventListener('click', ()=> {
 getID('switcher').addEventListener('click', ()=>{
     getID('full-post').style.display = 'block';
     getID('card-post').style.display = 'none';
-    getID('full-post-heading').innerHTML = getID('post-head').value;
+    getID('full-post-heading').innerText = getID('post-head').value;
     console.log(getID('post-head').value)
-    getID('full-post-content').innerHTML = getID('post-content').value;
+    getID('full-post-content').innerText = getID('post-content').value;
     console.log(getID('post-content').value)
 
 })
