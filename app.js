@@ -12,13 +12,20 @@ getID('submit').addEventListener('click', ()=>{
     // console.log(head);
     const content = getID('post-content').value;
     // console.log(content);
-
     getID('post-input').style.display = 'none';
-    getID('card-post').style.display = 'block';
 
-
-    getID('card-head').innerText = head;
-    getID('card-content').innerText = content.slice(0,150)+'...';
+    if(content.length > 150)
+    {
+        getID('card-head').innerText = head;
+        getID('card-content').innerText = content.slice(0,150)+'...';
+        getID('card-post').style.display = 'block';
+    }
+    else {
+        getID('card-head').innerText = head;
+        getID('card-content').innerText = content;
+        getID('switcher').style.display = 'none';
+        getID('card-post').style.display = 'block';
+    }
 })
 
 getID('switcher').addEventListener('click', ()=>{
