@@ -1,38 +1,40 @@
-
 const getID = id => document.getElementById(id);
 
-getID('card-post').style.display = 'none';
-getID('full-post').style.display = 'none';
+fetch('https://api.chucknorris.io/jokes/random')
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        var joke = data.value;
+        console.log(joke);
 
-
+        getID('card-content').innerText = joke;
+    })
 
 
 getID('submit').addEventListener('click', ()=>{
     const head = getID('post-head').value;
-    // console.log(head);
+    //console.log(head);
     const content = getID('post-content').value;
-    // console.log(content);
-    getID('post-input').style.display = 'none';
+    console.log(content);
 
-    if(content.length > 150)
-    {
-        getID('card-head').innerText = head;
-        getID('card-content').innerText = content.slice(0,150)+'...';
-        getID('card-post').style.display = 'block';
-    }
-    else {
-        getID('card-head').innerText = head;
-        getID('card-content').innerText = content;
-        getID('switcher').style.display = 'none';
-        getID('card-post').style.display = 'block';
-    }
+    const mainBody = getID('inner-body');
+    getID('post-head').value = "";
+    getID('post-content').value = "";
+
+
+    const markUp = `
+            <div class="container" id="card-post">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title" id='card-head'>${head}</h5>
+                <p class="card-text" id='card-content'>${content}</p>
+            </div>
+        </div>
+    </div>
+    `;
+
+    mainBody.insertAdjacentHTML('beforeend', markUp);
 })
 
-getID('switcher').addEventListener('click', ()=>{
-    getID('card-post').style.display = 'none';
-    getID('full-post').style.display = 'block';
-    getID('full-heading').innerText = getID('post-head').value;
-    console.log(getID('post-head').value);
-    getID('full-content').innerText = getID('post-content').value;
 
-})

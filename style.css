@@ -1,0 +1,15 @@
+#inner-body{
+    display: flex;
+}
+ul{
+    display: flex;
+}
+.container-form{
+    margin-left: 15px;
+    width: 30%;
+    margin-right: 50px;
+}
+
+.card-body{
+    margin-left: 10px;
+}

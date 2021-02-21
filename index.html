@@ -3,6 +3,7 @@
 <head>
     <title>Blog</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </head>
 
@@ -35,34 +36,32 @@
 
 <br>
 
-<div class="container" id="post-input">
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Heading</label>
-        <input type="text" class="form-control" id="post-head">
-    </div>
-    <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Content</label>
-        <textarea class="form-control" id="post-content" rows="3"></textarea>
-    </div>
 
-    <button type="button" class="btn btn-outline-success" id="submit">Submit</button>
-
-</div>
-
-<div class="container" id="card-post">
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title" id='card-head'></h5>
-            <p class="card-text" id='card-content'></p>
-            <a href="#" class="btn btn-primary" id="switcher">Read Full Content</a>
+<div id = "inner-body">
+    <div class="container-form" id="post-input">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Heading</label>
+            <input type="text" class="form-control" id="post-head">
         </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Content</label>
+            <textarea class="form-control" id="post-content" rows="3"></textarea>
+        </div>
+
+        <button type="button" class="btn btn-outline-success" id="submit">Submit</button>
+
     </div>
-</div>
-
-
-<div class="container" id="full-post">
-    <h2 id="full-heading"></h2>
-    <p id="full-content"></p>
+    <ul>
+        <div class="container" id="card-post">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title" id='card-head'>Joke of the Moment</h5>
+                    <p class="card-text" id='card-content'></p>
+                    <!--<a href="#" class="btn btn-primary" id="switcher">Read Full Content</a>-->
+                </div>
+            </div>
+        </div>
+    </ul>
 </div>
 
 <script src="app.js"></script>
